@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Capitaliser et Inverser le Texte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Capitaliser et Inverser le Texte</h1>
+        <div>
+            <label for="inputText">Entrez votre texte :</label>
+            <input type="text" id="inputText" oninput="updateOutput()" />
+        </div>
+        <div class="output">
+            <h2>Texte en majuscules :</h2>
+            <p id="capitalizedText"></p>
+            <h2>Texte inversé :</h2>
+            <p id="reversedText"></p>
+        </div>
+    </div>
+
+    <script>
+        function updateOutput() {
+            const inputText = document.getElementById('inputText').value;
+            document.getElementById('capitalizedText').innerText = inputText.toUpperCase();
+            document.getElementById('reversedText').innerText = inputText.split('').reverse().join('');
+        }
+    </script>
+</body>
+
+</html>
